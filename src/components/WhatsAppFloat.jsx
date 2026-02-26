@@ -5,7 +5,7 @@ import './WhatsAppFloat.css'
 const WhatsAppFloat = () => {
   const phoneNumber = '+1234567890' // Replace with your WhatsApp number
   const message = 'Hello! I would like to know more about your dental implants and GBR products.'
-  const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`
+  const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[0705170231]/g, '')}?text=${encodeURIComponent(message)}`
 
   return (
     <div className="whatsapp-container">

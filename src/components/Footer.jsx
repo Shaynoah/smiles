@@ -98,8 +98,8 @@ const Footer = () => {
               />
               <div className="footer-logo-separator"></div>
               <div className="footer-logo-text-container">
-                <span className="footer-logo-company-name">SmileSmith</span>
-                <span className="footer-logo-company-suffix">Ltd</span>
+                <span className="footer-logo-company-name">SmileSmith Ltd</span>
+                <span className="footer-logo-company-suffix">Experts in Implants & GBR products</span>
               </div>
             </div>
             <motion.p

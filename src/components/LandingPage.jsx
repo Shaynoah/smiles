@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import AboutSection from './AboutSection'
 import heroImage from '../images/image1.png'
 import './LandingPage.css'
@@ -112,28 +113,20 @@ const LandingPage = () => {
             >
               Explore Products
             </motion.button>
-            <motion.button
-              className="btn btn-secondary"
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Learn More
-            </motion.button>
+              <Link
+                to="/contact"
+                className="btn btn-secondary"
+                style={{ textDecoration: 'none', display: 'inline-block' }}
+              >
+                Contact Us
+              </Link>
+            </motion.div>
           </motion.div>
 
-          <motion.div
-            className="scroll-indicator"
-            animate={{ y: [0, 10, 0] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          >
-            <div className="mouse">
-              <div className="wheel"></div>
-            </div>
-          </motion.div>
         </motion.div>
 
         <div className="hero-image-container">
@@ -203,17 +196,17 @@ const FeaturesSection = () => {
   const features = [
     {
       icon: '🦷',
-      title: 'Premium Quality',
+      title: 'Dental Products',
       description: 'World-class dental implants manufactured with precision',
     },
     {
       icon: '🔬',
-      title: 'Advanced Technology',
+      title: 'Dental Lab',
       description: 'Cutting-edge GBR products for optimal results',
     },
     {
       icon: '✨',
-      title: 'Expert Solutions',
+      title: 'Dental Clinic',
       description: 'Trusted by dental professionals worldwide',
     },
   ]
@@ -271,9 +264,9 @@ const StatsSection = () => {
   const isInView = useInView(ref, { once: true })
 
   const stats = [
-    { number: '10K+', label: 'Successful Implants' },
-    { number: '500+', label: 'Dental Professionals' },
-    { number: '50+', label: 'Countries Served' },
+    { number: '5K+', label: 'Successful Implants' },
+    { number: '100+', label: 'Dental Professionals' },
+    { number: '5+', label: 'Countries Served' },
     { number: '99%', label: 'Satisfaction Rate' },
   ]
 
