@@ -69,6 +69,8 @@
   flex-direction: column;
   justify-content: center;
   gap: 0;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .logo-company-name {
@@ -81,6 +83,9 @@
   transition: all 0.3s ease;
   display: inline-block;
   cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .logo-company-suffix {
@@ -94,6 +99,9 @@
   display: block;
   cursor: pointer;
   font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .logo-img {
@@ -582,10 +590,13 @@
 @media (max-width: 768px) {
   .nav-container {
     grid-template-columns: 1fr auto;
+    padding: 0 1rem;
+    gap: 1rem;
   }
 
   .logo {
-    margin-left: 1.5rem;
+    margin-left: 0;
+    max-width: calc(100vw - 80px);
   }
 
   .nav-links {
@@ -601,43 +612,85 @@
   }
 
   .logo-img {
-    height: 85px;
+    height: 60px;
   }
 
   .navbar.scrolled .logo-img {
-    height: 75px;
-  }
-
-  .logo-wrapper {
-    gap: 1rem;
-  }
-
-  .logo-separator {
-    height: 60px;
-    width: 2.5px;
-  }
-
-  .navbar.scrolled .logo-separator {
     height: 55px;
   }
 
+  .logo-wrapper {
+    gap: 0.6rem;
+    flex-wrap: nowrap;
+  }
+
+  .logo-separator {
+    height: 45px;
+    width: 2px;
+  }
+
+  .navbar.scrolled .logo-separator {
+    height: 40px;
+  }
+
   .logo-company-name {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    line-height: 1.2;
   }
 
   .logo-company-suffix {
-    font-size: 0.65rem;
+    font-size: 0.7rem;
+    line-height: 1.2;
   }
 
   .navbar.scrolled .logo-company-name {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
   .navbar.scrolled .logo-company-suffix {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 0.75rem;
+  }
+
+  .logo-img {
+    height: 50px;
+  }
+
+  .navbar.scrolled .logo-img {
+    height: 45px;
+  }
+
+  .logo-separator {
+    height: 35px;
+    width: 1.5px;
+  }
+
+  .navbar.scrolled .logo-separator {
+    height: 30px;
+  }
+
+  .logo-company-name {
+    font-size: 1.1rem;
+  }
+
+  .logo-company-suffix {
     font-size: 0.6rem;
   }
 
-  .nav-container {
-    padding: 0 1.5rem;
+  .navbar.scrolled .logo-company-name {
+    font-size: 1rem;
+  }
+
+  .navbar.scrolled .logo-company-suffix {
+    font-size: 0.55rem;
+  }
+
+  .logo-wrapper {
+    gap: 0.5rem;
   }
 }
